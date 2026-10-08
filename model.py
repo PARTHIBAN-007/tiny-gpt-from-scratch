@@ -20,8 +20,12 @@ def build_stoi(vocab):
         mpp[char] = i
     return mpp
 
-# Step 3 - build_itos (not yet solved)
-# TODO: implement
+# Step 3 - build_itos
+def build_itos(vocab):
+    mpp = {}
+    for i,char in enumerate(vocab):
+        mpp[i] = char
+    return mpp
 
 # Step 4 - encode_char (not yet solved)
 # TODO: implement
