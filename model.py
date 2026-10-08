@@ -42,8 +42,12 @@ def encode_string(text, stoi):
 def decode_int(token_id, itos):
     return itos[token_id]
 
-# Step 7 - decode_ids (not yet solved)
-# TODO: implement
+# Step 7 - decode_ids
+def decode_ids(ids, itos):
+    res = []
+    for _id in ids:
+        res.append(decode_int(_id,itos))
+    return "".join(res)
 
 # Step 8 - make_1d_array
 import numpy as np
