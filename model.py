@@ -27,11 +27,16 @@ def build_itos(vocab):
         mpp[i] = char
     return mpp
 
-# Step 4 - encode_char (not yet solved)
-# TODO: implement
+# Step 4 - encode_char
+def encode_char(ch, stoi):
+    return stoi[ch]
 
-# Step 5 - encode_string (not yet solved)
-# TODO: implement
+# Step 5 - encode_string
+def encode_string(text, stoi):
+    res = []
+    for char in text:
+        res.append(encode_char(char,stoi))
+    return res
 
 # Step 6 - decode_int (not yet solved)
 # TODO: implement
