@@ -78,7 +78,7 @@ import numpy as np
 
 def make_2d_random(rows, cols, seed):
     np.random.seed(seed)
-    return np.random.randint(0,1,size = (rows,cols),dtype = np.float64)
+    return np.random.uniform(0.0,1.0,size = (rows,cols))
 
 # Step 13 - index_element
 def index_element(arr, i, j):
@@ -90,8 +90,11 @@ import numpy as np
 def slice_row(arr, i):
     return arr[i]
 
-# Step 15 - slice_column (not yet solved)
-# TODO: implement
+# Step 15 - slice_column
+import numpy as np
+
+def slice_column(arr, j):
+    return arr[:,j]
 
 # Step 16 - slice_subblock (not yet solved)
 # TODO: implement
