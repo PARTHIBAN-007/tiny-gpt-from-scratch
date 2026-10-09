@@ -178,8 +178,11 @@ import numpy as np
 def sum_keepdims(arr, axis):
     return np.sum(arr,axis = axis , keepdims = True)
 
-# Step 30 - naive_softmax_1d (not yet solved)
-# TODO: implement
+# Step 30 - naive_softmax_1d
+import numpy as np
+
+def naive_softmax_1d(logits):
+    return array_exp(logits) / sum_all(array_exp(logits))
 
 # Step 31 - softmax_overflow_demo (not yet solved)
 # TODO: implement
