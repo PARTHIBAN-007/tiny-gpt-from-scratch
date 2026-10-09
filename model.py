@@ -168,8 +168,9 @@ import numpy as np
 def matmul(a, b):
     return a @ b
 
-# Step 28 - transpose_matrix (not yet solved)
-# TODO: implement
+# Step 28 - transpose_matrix
+def transpose_matrix(arr):
+    return arr.transpose()
 
 # Step 29 - sum_keepdims (not yet solved)
 # TODO: implement
