@@ -221,8 +221,9 @@ def read_text_file(text_blob):
         raise ValueError("Input text blob cannot be empty.")
     return text_blob
 
-# Step 35 - encode_corpus_to_int_array (not yet solved)
-# TODO: implement
+# Step 35 - encode_corpus_to_int_array
+def encode_corpus_to_int_array(text, stoi):
+    return np.array(encode_string(text,stoi))
 
 # Step 36 - pick_split_point (not yet solved)
 # TODO: implement
