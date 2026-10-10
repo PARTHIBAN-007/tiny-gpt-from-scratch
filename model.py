@@ -254,7 +254,7 @@ def slice_y_at_offset(data, i, block_size):
 
 # Step 41 - sample_random_batch_offsets
 def sample_random_batch_offsets(data_len, block_size, batch_size, rng):
-    return rng.Generator(1,data_len)
+    return rng.integers(low = 0, high = data_len - block_size ,size = batch_size)
 
 # Step 42 - stack_x_batch
 import numpy as np
