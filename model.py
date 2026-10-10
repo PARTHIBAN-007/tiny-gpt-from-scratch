@@ -225,8 +225,10 @@ def read_text_file(text_blob):
 def encode_corpus_to_int_array(text, stoi):
     return np.array(encode_string(text,stoi))
 
-# Step 36 - pick_split_point (not yet solved)
-# TODO: implement
+# Step 36 - pick_split_point
+import math
+def pick_split_point(n, train_frac):
+    return math.floor(train_frac*n)
 
 # Step 37 - slice_train_and_val (not yet solved)
 # TODO: implement
