@@ -262,8 +262,11 @@ import numpy as np
 def stack_x_batch(data, offsets, block_size):
     return np.array([slice_x_at_offset(data,o,block_size) for o in offsets])
 
-# Step 43 - stack_y_batch (not yet solved)
-# TODO: implement
+# Step 43 - stack_y_batch
+import numpy as np
+
+def stack_y_batch(data, offsets, block_size):
+    return np.array([slice_y_at_offset(data,o,block_size) for o in offsets])
 
 # Step 44 - get_batch (not yet solved)
 # TODO: implement
