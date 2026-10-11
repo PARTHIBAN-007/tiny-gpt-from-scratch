@@ -276,8 +276,11 @@ def get_batch(data, block_size, batch_size, rng):
     y_batch = stack_y_batch(data,offest,block_size)
     return x_batch, y_batch
 
-# Step 45 - allocate_count_matrix (not yet solved)
-# TODO: implement
+# Step 45 - allocate_count_matrix
+import numpy as np
+
+def allocate_count_matrix(vocab_size):
+    return np.array(make_2d_zeros(vocab_size,vocab_size),dtype = int)
 
 # Step 46 - loop_fill_counts (not yet solved)
 # TODO: implement
