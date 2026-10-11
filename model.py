@@ -268,8 +268,13 @@ import numpy as np
 def stack_y_batch(data, offsets, block_size):
     return np.array([slice_y_at_offset(data,o,block_size) for o in offsets])
 
-# Step 44 - get_batch (not yet solved)
-# TODO: implement
+# Step 44 - get_batch
+def get_batch(data, block_size, batch_size, rng):
+    data_len = data.shape[0]
+    offest = sample_random_batch_offsets(data_len,block_size,batch_size,rng)
+    x_batch = stack_x_batch(data,offest,block_size)
+    y_batch = stack_y_batch(data,offest,block_size)
+    return x_batch, y_batch
 
 # Step 45 - allocate_count_matrix (not yet solved)
 # TODO: implement
