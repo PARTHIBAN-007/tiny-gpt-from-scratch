@@ -67,7 +67,7 @@ python scaffold.py
 - [ ] **55.** sum_negative_log_probs
 - [ ] **56.** average_nll
 - [ ] **57.** initialize_w_random
-- [ ] **58.** scale_w_small
+- [x] **58.** scale_w_small
 - [ ] **59.** one_hot_encode_batch
 - [ ] **60.** forward_logits_onehot
 - [ ] **61.** observe_lookup_equivalence
@@ -101,7 +101,7 @@ python scaffold.py
 - [ ] **89.** layernorm_backward_divide_std
 - [ ] **90.** layernorm_backward_full
 - [ ] **91.** layernorm_backward_implementation
-- [ ] **92.** create_token_embedding
+- [x] **92.** create_token_embedding
 - [ ] **93.** token_embedding_forward
 - [ ] **94.** token_embedding_backward
 - [ ] **95.** create_positional_embedding

@@ -318,8 +318,11 @@ def allocate_count_matrix(vocab_size):
 # Step 57 - initialize_w_random (not yet solved)
 # TODO: implement
 
-# Step 58 - scale_w_small (not yet solved)
-# TODO: implement
+# Step 58 - scale_w_small
+import numpy as np
+
+def scale_w_small(w_matrix, scale):
+    return w_matrix * scale
 
 # Step 59 - one_hot_encode_batch (not yet solved)
 # TODO: implement
@@ -420,8 +423,11 @@ def allocate_count_matrix(vocab_size):
 # Step 91 - layernorm_backward_implementation (not yet solved)
 # TODO: implement
 
-# Step 92 - create_token_embedding (not yet solved)
-# TODO: implement
+# Step 92 - create_token_embedding
+def create_token_embedding(vocab_size, d_model, scale=0.02):
+    np.random.seed(0)
+    embedding = np.random.randn(vocab_size,d_model) * scale 
+    return embedding
 
 # Step 93 - token_embedding_forward (not yet solved)
 # TODO: implement
