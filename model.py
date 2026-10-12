@@ -303,8 +303,9 @@ import numpy as np
 def add_one_smoothing(n_matrix):
     return n_matrix + 1
 
-# Step 49 - row_sums_of_counts (not yet solved)
-# TODO: implement
+# Step 49 - row_sums_of_counts
+def row_sums_of_counts(n_matrix):
+    return np.sum(n_matrix,axis = 1,keepdims = True)
 
 # Step 50 - normalize_counts_to_probs (not yet solved)
 # TODO: implement
