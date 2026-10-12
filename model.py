@@ -282,8 +282,14 @@ import numpy as np
 def allocate_count_matrix(vocab_size):
     return np.array(make_2d_zeros(vocab_size,vocab_size),dtype = int)
 
-# Step 46 - loop_fill_counts (not yet solved)
-# TODO: implement
+# Step 46 - loop_fill_counts
+import numpy as np
+
+def loop_fill_counts(n_matrix, data):
+    n = len(data)
+    for i in range(n-1):
+        n_matrix[data[i]][data[i+1]] += 1
+    return n_matrix
 
 # Step 47 - vectorize_counts_add_at (not yet solved)
 # TODO: implement
@@ -429,8 +435,9 @@ def create_token_embedding(vocab_size, d_model, scale=0.02):
     embedding = np.random.randn(vocab_size,d_model) * scale 
     return embedding
 
-# Step 93 - token_embedding_forward (not yet solved)
-# TODO: implement
+# Step 93 - token_embedding_forward
+def token_embedding_forward(token_ids, embedding_matrix):
+    return embedding_matrix[token_ids]
 
 # Step 94 - token_embedding_backward (not yet solved)
 # TODO: implement

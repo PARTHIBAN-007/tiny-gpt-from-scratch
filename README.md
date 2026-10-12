@@ -55,7 +55,7 @@ python scaffold.py
 - [x] **43.** stack_y_batch
 - [x] **44.** get_batch
 - [x] **45.** allocate_count_matrix
-- [ ] **46.** loop_fill_counts
+- [x] **46.** loop_fill_counts
 - [ ] **47.** vectorize_counts_add_at
 - [ ] **48.** add_one_smoothing
 - [ ] **49.** row_sums_of_counts
@@ -102,7 +102,7 @@ python scaffold.py
 - [ ] **90.** layernorm_backward_full
 - [ ] **91.** layernorm_backward_implementation
 - [x] **92.** create_token_embedding
-- [ ] **93.** token_embedding_forward
+- [x] **93.** token_embedding_forward
 - [ ] **94.** token_embedding_backward
 - [ ] **95.** create_positional_embedding
 - [ ] **96.** slice_positional_embedding
