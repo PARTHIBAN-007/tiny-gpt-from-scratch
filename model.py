@@ -307,11 +307,14 @@ def add_one_smoothing(n_matrix):
 def row_sums_of_counts(n_matrix):
     return np.sum(n_matrix,axis = 1,keepdims = True)
 
-# Step 50 - normalize_counts_to_probs (not yet solved)
-# TODO: implement
+# Step 50 - normalize_counts_to_probs
+def normalize_counts_to_probs(n_matrix):
+    return n_matrix / row_sums_of_counts(n_matrix)
 
-# Step 51 - sample_next_token (not yet solved)
-# TODO: implement
+# Step 51 - sample_next_token
+def sample_next_token(p_matrix, current_id, rng):
+    vocab_size = p_matrix.shape[1]
+    return int(rng.choice(vocab_size, p=p_matrix[current_id]))
 
 # Step 52 - generate_sequence (not yet solved)
 # TODO: implement
