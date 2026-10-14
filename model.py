@@ -316,8 +316,13 @@ def sample_next_token(p_matrix, current_id, rng):
     vocab_size = p_matrix.shape[1]
     return int(rng.choice(vocab_size, p=p_matrix[current_id]))
 
-# Step 52 - generate_sequence (not yet solved)
-# TODO: implement
+# Step 52 - generate_sequence
+def generate_sequence(p_matrix, start_id, length, rng):
+    res = [start_id]
+    for _ in range(length-1):
+        token = sample_next_token(p_matrix,res[-1],rng)
+        res.append(token)
+    return np.array(res)
 
 # Step 53 - decode_generated_sequence (not yet solved)
 # TODO: implement
