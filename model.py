@@ -324,8 +324,12 @@ def generate_sequence(p_matrix, start_id, length, rng):
         res.append(token)
     return np.array(res)
 
-# Step 53 - decode_generated_sequence (not yet solved)
-# TODO: implement
+# Step 53 - decode_generated_sequence
+def decode_generated_sequence(ids, itos):
+    text = []
+    for _id in ids:
+        text.append(itos[_id])
+    return "".join(text)
 
 # Step 54 - log_prob_of_pair (not yet solved)
 # TODO: implement
