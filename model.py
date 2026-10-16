@@ -340,8 +340,9 @@ def sum_negative_log_probs(p_matrix, data):
     n = len(data)
     return - np.sum([log_prob_of_pair(p_matrix,data[i],data[i+1]) for i in range(n-1)])
 
-# Step 56 - average_nll (not yet solved)
-# TODO: implement
+# Step 56 - average_nll
+def average_nll(p_matrix, data):
+    return sum_negative_log_probs(p_matrix,data) / (len(data)-1)
 
 # Step 57 - initialize_w_random (not yet solved)
 # TODO: implement
