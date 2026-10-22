@@ -421,14 +421,24 @@ def linear_forward(x, w):
 # Step 78 - linear_backward_dw (not yet solved)
 # TODO: implement
 
-# Step 79 - bias_add_forward (not yet solved)
-# TODO: implement
+# Step 79 - bias_add_forward
+def bias_add_forward(x, b):
+    return {'y': x + b, 'cache': {'b_shape': b.shape}}
 
 # Step 80 - bias_add_backward_db (not yet solved)
 # TODO: implement
 
-# Step 81 - relu_forward (not yet solved)
-# TODO: implement
+# Step 81 - relu_forward
+def relu_forward(x):
+    def relu(num):
+        return max(0,num)
+    x = np.vectorize(relu)
+    return {
+        "y": x,
+        "cahce": {
+            "x": x
+        }
+    }
 
 # Step 82 - relu_backward (not yet solved)
 # TODO: implement
