@@ -478,7 +478,10 @@ def create_token_embedding(vocab_size, d_model, scale=0.02):
 
 # Step 93 - token_embedding_forward
 def token_embedding_forward(token_ids, embedding_matrix):
-    return embedding_matrix[token_ids]
+    return embedding_matrix[token_ids] , {
+        "token_ids": token_ids,
+        "vocab_size": embedding_matrix.shape[0]
+    }
 
 # Step 94 - token_embedding_backward (not yet solved)
 # TODO: implement
