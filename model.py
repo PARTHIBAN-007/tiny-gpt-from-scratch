@@ -356,8 +356,15 @@ import numpy as np
 def scale_w_small(w_matrix, scale):
     return w_matrix * scale
 
-# Step 59 - one_hot_encode_batch (not yet solved)
-# TODO: implement
+# Step 59 - one_hot_encode_batch
+import numpy as np
+
+def one_hot_encode_batch(ids, vocab_size):
+    n = len(ids)
+    one_hot = make_2d_zeros(len(ids),vocab_size)
+    for i in range(n):
+        one_hot[i][ids[i]] = 1
+    return one_hot
 
 # Step 60 - forward_logits_onehot (not yet solved)
 # TODO: implement
