@@ -366,8 +366,9 @@ def one_hot_encode_batch(ids, vocab_size):
         one_hot[i][ids[i]] = 1
     return one_hot
 
-# Step 60 - forward_logits_onehot (not yet solved)
-# TODO: implement
+# Step 60 - forward_logits_onehot
+def forward_logits_onehot(onehot, w_matrix):
+    return matmul(onehot,w_matrix)
 
 # Step 61 - observe_lookup_equivalence (not yet solved)
 # TODO: implement
