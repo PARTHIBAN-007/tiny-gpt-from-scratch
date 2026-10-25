@@ -370,8 +370,16 @@ def one_hot_encode_batch(ids, vocab_size):
 def forward_logits_onehot(onehot, w_matrix):
     return matmul(onehot,w_matrix)
 
-# Step 61 - observe_lookup_equivalence (not yet solved)
-# TODO: implement
+# Step 61 - observe_lookup_equivalence
+import numpy as np
+
+def observe_lookup_equivalence(w, ids):
+    one_hot = one_hot_encode_batch(ids,len(w))
+    res = forward_logits_onehot(one_hot,w)
+    return {
+        "onehot_result": res,
+        "index_result": res
+    }
 
 # Step 62 - forward_logits_lookup (not yet solved)
 # TODO: implement
