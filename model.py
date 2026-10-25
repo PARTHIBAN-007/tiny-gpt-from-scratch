@@ -344,8 +344,11 @@ def sum_negative_log_probs(p_matrix, data):
 def average_nll(p_matrix, data):
     return sum_negative_log_probs(p_matrix,data) / (len(data)-1)
 
-# Step 57 - initialize_w_random (not yet solved)
-# TODO: implement
+# Step 57 - initialize_w_random
+import numpy as np
+
+def initialize_w_random(vocab_size, rng):
+    return rng.standard_normal(size = (vocab_size,vocab_size))
 
 # Step 58 - scale_w_small
 import numpy as np
