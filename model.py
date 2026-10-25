@@ -381,8 +381,9 @@ def observe_lookup_equivalence(w, ids):
         "index_result": res
     }
 
-# Step 62 - forward_logits_lookup (not yet solved)
-# TODO: implement
+# Step 62 - forward_logits_lookup
+def forward_logits_lookup(w, ids):
+    return w[ids]
 
 # Step 63 - logits_to_probs_rowwise (not yet solved)
 # TODO: implement
