@@ -391,10 +391,13 @@ def logits_to_probs_rowwise(logits):
 
 # Step 64 - gather_correct_token_probs
 def gather_correct_token_probs(probs, targets):
-    return np.array([probs[idx][targets[idx]] for idx in range(probs.shape[0])])
+    return probs[np.arange(len(probs)),targets]
 
-# Step 65 - cross_entropy_loss (not yet solved)
-# TODO: implement
+# Step 65 - cross_entropy_loss
+import numpy as np
+
+def cross_entropy_loss(probs, targets):
+    return -np.mean(array_log(gather_correct_token_probs(probs,targets)))
 
 # Step 66 - derive_dlogits_on_paper (not yet solved)
 # TODO: implement
