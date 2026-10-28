@@ -455,12 +455,10 @@ def bias_add_forward(x, b):
 
 # Step 81 - relu_forward
 def relu_forward(x):
-    def relu(num):
-        return max(0,num)
-    x = np.vectorize(relu)
+    relu = np.where(x>0,x,0)
     return {
-        "y": x,
-        "cahce": {
+        "y": relu,
+        "cache": {
             "x": x
         }
     }
