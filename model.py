@@ -434,8 +434,10 @@ def linear_forward(x, w):
         }
     }
 
-# Step 75 - derive_dx_on_paper (not yet solved)
-# TODO: implement
+# Step 75 - derive_dx_on_paper
+def derive_dx_on_paper():
+    return f" Y = X @ W /n dL/dX = dY @ W.T " 
+" shapes: X (B, In), W (In, Out), dY (B, Out) -> dL/dX (B, In)"
 
 # Step 76 - derive_linear_dw_on_paper (not yet solved)
 # TODO: implement
@@ -579,8 +581,11 @@ import numpy as np
 def attention_weighted_values(attn, v):
     return attn @ v
 
-# Step 109 - apply_output_projection (not yet solved)
-# TODO: implement
+# Step 109 - apply_output_projection
+import numpy as np
+
+def apply_output_projection(attn_out, w_o):
+    return attn_out @ w_o
 
 # Step 110 - output_projection_backward (not yet solved)
 # TODO: implement
@@ -693,8 +698,11 @@ def attention_weighted_values(attn, v):
 # Step 146 - full_model_backward (not yet solved)
 # TODO: implement
 
-# Step 147 - initialize_adam_moments (not yet solved)
-# TODO: implement
+# Step 147 - initialize_adam_moments
+import numpy as np
+
+def initialize_adam_moments(model_params):
+    return {"W": np.zeros(model_params["W"].shape),"b": np.zeros(model_params["b"].shape)} , {"W": np.zeros(model_params["W"].shape),"b": np.zeros(model_params["b"].shape)}
 
 # Step 148 - initialize_adam_step_counter (not yet solved)
 # TODO: implement

@@ -84,7 +84,7 @@ python scaffold.py
 - [ ] **72.** train_neural_bigram_loop
 - [ ] **73.** sample_from_neural_bigram
 - [x] **74.** linear_forward
-- [ ] **75.** derive_dx_on_paper
+- [x] **75.** derive_dx_on_paper
 - [ ] **76.** derive_linear_dw_on_paper
 - [ ] **77.** linear_backward_dx
 - [ ] **78.** linear_backward_dw
@@ -118,7 +118,7 @@ python scaffold.py
 - [x] **106.** apply_causal_mask
 - [ ] **107.** softmax_attention_weights
 - [x] **108.** attention_weighted_values
-- [ ] **109.** apply_output_projection
+- [x] **109.** apply_output_projection
 - [ ] **110.** output_projection_backward
 - [ ] **111.** attention_value_backward
 - [ ] **112.** masked_softmax_backward
@@ -156,7 +156,7 @@ python scaffold.py
 - [ ] **144.** lm_head_linear_forward
 - [ ] **145.** full_model_forward
 - [ ] **146.** full_model_backward
-- [ ] **147.** initialize_adam_moments
+- [x] **147.** initialize_adam_moments
 - [ ] **148.** initialize_adam_step_counter
 - [ ] **149.** adam_increment_step
 - [ ] **150.** adam_update_first_moment
