@@ -518,8 +518,11 @@ def token_embedding_forward(token_ids, embedding_matrix):
 def create_positional_embedding(block_size, d_model, scale=0.02):
     return scale_w_small(make_2d_random(block_size,d_model,None),scale)
 
-# Step 96 - slice_positional_embedding (not yet solved)
-# TODO: implement
+# Step 96 - slice_positional_embedding
+import numpy as np
+
+def slice_positional_embedding(positional_matrix, seq_len):
+    return positional_matrix[:seq_len]
 
 # Step 97 - add_token_and_positional_embeddings (not yet solved)
 # TODO: implement
