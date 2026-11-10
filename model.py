@@ -526,8 +526,13 @@ def token_embedding_forward(token_ids, embedding_matrix):
 # Step 98 - embedding_sum_backward (not yet solved)
 # TODO: implement
 
-# Step 99 - create_qkv_projections (not yet solved)
-# TODO: implement
+# Step 99 - create_qkv_projections
+def create_qkv_projections(d_model, d_head, scale=0.02):
+    return {
+        "Wq": scale_w_small(make_2d_random(d_model,d_head,0),scale),
+        "Wk": scale_w_small(make_2d_random(d_model,d_head,1),scale),
+        "Wv": scale_w_small(make_2d_random(d_model,d_head,2),scale)
+    }
 
 # Step 100 - compute_query
 import numpy as np
