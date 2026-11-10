@@ -514,8 +514,9 @@ def token_embedding_forward(token_ids, embedding_matrix):
 # Step 94 - token_embedding_backward (not yet solved)
 # TODO: implement
 
-# Step 95 - create_positional_embedding (not yet solved)
-# TODO: implement
+# Step 95 - create_positional_embedding
+def create_positional_embedding(block_size, d_model, scale=0.02):
+    return scale_w_small(make_2d_random(block_size,d_model,None),scale)
 
 # Step 96 - slice_positional_embedding (not yet solved)
 # TODO: implement
