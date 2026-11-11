@@ -615,8 +615,15 @@ def apply_output_projection(attn_out, w_o):
 # Step 115 - qkv_projection_backward (not yet solved)
 # TODO: implement
 
-# Step 116 - choose_attention_head_config (not yet solved)
-# TODO: implement
+# Step 116 - choose_attention_head_config
+def choose_attention_head_config(d_model, n_heads):
+    if d_model%n_heads!=0:
+        raise ValueError
+    return {
+        "n_heads": n_heads,
+        "d_head": d_model//n_heads,
+        "d_model": d_model
+    }
 
 # Step 117 - create_multihead_qkv_projections (not yet solved)
 # TODO: implement
