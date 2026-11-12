@@ -579,7 +579,8 @@ def build_causal_mask(seq_len):
 import numpy as np
 
 def apply_causal_mask(scaled_scores, causal_mask):
-    print(causal_mask)
+    mask = np.where(causal_mask,0,float('-inf'))
+    scores = scaled_scores + mask
     return scores
 
 # Step 107 - softmax_attention_weights (not yet solved)
@@ -625,8 +626,13 @@ def choose_attention_head_config(d_model, n_heads):
         "d_model": d_model
     }
 
-# Step 117 - create_multihead_qkv_projections (not yet solved)
-# TODO: implement
+# Step 117 - create_multihead_qkv_projections
+def create_multihead_qkv_projections(d_model, scale=0.02):
+    return {
+        "Wq": scale_w_small(make_2d_random(d_model,d_model,0),scale),
+        "Wk": scale_w_small(make_2d_random(d_model,d_model,1),scale),
+        "Wv": scale_w_small(make_2d_random(d_model,d_model,2),scale)
+    }
 
 # Step 118 - create_multihead_output_projection (not yet solved)
 # TODO: implement
