@@ -649,8 +649,12 @@ def create_multihead_qkv_projections(d_model, scale=0.02):
 # Step 122 - get_multihead_sequence_length (not yet solved)
 # TODO: implement
 
-# Step 123 - compute_d_head (not yet solved)
-# TODO: implement
+# Step 123 - compute_d_head
+def compute_d_head(d_model, n_heads):
+    if d_model%n_heads!=0:
+        raise ValueError
+    head_dim = d_model//n_heads
+    return head_dim
 
 # Step 124 - multihead_masked_softmax_scores (not yet solved)
 # TODO: implement
