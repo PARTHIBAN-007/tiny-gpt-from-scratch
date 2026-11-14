@@ -583,8 +583,17 @@ def apply_causal_mask(scaled_scores, causal_mask):
     scores = scaled_scores + mask
     return scores
 
-# Step 107 - softmax_attention_weights (not yet solved)
-# TODO: implement
+# Step 107 - softmax_attention_weights
+import numpy as np
+
+def softmax_attention_weights(masked_scores):
+    batch_size = len(masked_scores)
+    t1 = len(masked_scores[0])
+    t2 = len(masked_scores[0][0])
+    res = np.zeros((batch_size,t1,t2))
+    for i in range(batch_size):
+        res[i] = stable_softmax_2d_rowwise(masked_scores[i])
+    return res
 
 # Step 108 - attention_weighted_values
 import numpy as np
@@ -636,12 +645,9 @@ def create_multihead_qkv_projections(d_model, scale=0.02):
 
 # Step 118 - create_multihead_output_projection
 def create_multihead_output_projection(d_model, scale=0.02):
-    """Initialize Wo of shape (d_model, d_model) for multi-head attention output projection."""
-    # TODO: build a (d_model, d_model) random matrix and scale it down by `scale`.
-    w0 = make_2d_random(d_model,d_model,0)
-    print(w0)
-    w0 = scale_w_small(w0,scale)
-    return w0
+    wo = make_2d_random(d_model,d_model,0)
+    wo = scale_w_small(wo,scale)
+    return wo
 
 # Step 119 - reshape_to_heads
 import numpy as np
