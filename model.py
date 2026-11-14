@@ -634,17 +634,28 @@ def create_multihead_qkv_projections(d_model, scale=0.02):
         "Wv": scale_w_small(make_2d_random(d_model,d_model,2),scale)
     }
 
-# Step 118 - create_multihead_output_projection (not yet solved)
-# TODO: implement
+# Step 118 - create_multihead_output_projection
+def create_multihead_output_projection(d_model, scale=0.02):
+    """Initialize Wo of shape (d_model, d_model) for multi-head attention output projection."""
+    # TODO: build a (d_model, d_model) random matrix and scale it down by `scale`.
+    w0 = make_2d_random(d_model,d_model,0)
+    print(w0)
+    w0 = scale_w_small(w0,scale)
+    return w0
 
-# Step 119 - reshape_to_heads (not yet solved)
-# TODO: implement
+# Step 119 - reshape_to_heads
+import numpy as np
+
+def reshape_to_heads(x, n_heads, d_head):
+    batch_size, seq_len, d_model = x.shape
+    return x.reshape(batch_size,seq_len,n_heads,d_head)
 
 # Step 120 - transpose_heads_to_front (not yet solved)
 # TODO: implement
 
-# Step 121 - get_multihead_n_heads (not yet solved)
-# TODO: implement
+# Step 121 - get_multihead_n_heads
+def get_multihead_n_heads(config):
+    return config["n_heads"]
 
 # Step 122 - get_multihead_sequence_length (not yet solved)
 # TODO: implement
