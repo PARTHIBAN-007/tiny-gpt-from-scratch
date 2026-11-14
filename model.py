@@ -660,8 +660,11 @@ def transpose_heads_to_front(x_heads):
 def get_multihead_n_heads(config):
     return config["n_heads"]
 
-# Step 122 - get_multihead_sequence_length (not yet solved)
-# TODO: implement
+# Step 122 - get_multihead_sequence_length
+import numpy as np
+
+def get_multihead_sequence_length(x):
+    return x.shape[1]
 
 # Step 123 - compute_d_head
 def compute_d_head(d_model, n_heads):
