@@ -77,8 +77,8 @@ def make_2d_zeros(rows, cols):
 import numpy as np
 
 def make_2d_random(rows, cols, seed):
-    np.random.seed(seed)
-    return np.random.uniform(0.0,1.0,size = (rows,cols))
+    rng = np.random.default_rng(seed)
+    return rng.uniform(0.0, 1.0, size=(rows, cols))
 
 # Step 13 - index_element
 def index_element(arr, i, j):
@@ -637,10 +637,14 @@ def choose_attention_head_config(d_model, n_heads):
 
 # Step 117 - create_multihead_qkv_projections
 def create_multihead_qkv_projections(d_model, scale=0.02):
+    Wq = scale_w_small(make_2d_random(d_model, d_model, seed=42), scale)
+    Wk = scale_w_small(make_2d_random(d_model, d_model, seed=43), scale)
+    Wv = scale_w_small(make_2d_random(d_model, d_model, seed=44), scale)
+    
     return {
-        "Wq": scale_w_small(make_2d_random(d_model,d_model,0),scale),
-        "Wk": scale_w_small(make_2d_random(d_model,d_model,1),scale),
-        "Wv": scale_w_small(make_2d_random(d_model,d_model,2),scale)
+        'Wq': Wq,
+        'Wk': Wk,
+        'Wv': Wv
     }
 
 # Step 118 - create_multihead_output_projection
@@ -691,8 +695,12 @@ def compute_d_head(d_model, n_heads):
 # Step 127 - get_multihead_output_sequence_length (not yet solved)
 # TODO: implement
 
-# Step 128 - merge_heads_to_d_model (not yet solved)
-# TODO: implement
+# Step 128 - merge_heads_to_d_model
+import numpy as np
+
+def merge_heads_to_d_model(x_heads_back):
+    batch_size, seq_len, n_heads, d_head = x_heads_back.shape
+    return x_heads_back.reshape(batch_size,seq_len,n_heads*d_head)
 
 # Step 129 - multihead_output_projection_forward (not yet solved)
 # TODO: implement
