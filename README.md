@@ -103,7 +103,7 @@ python scaffold.py
 - [ ] **91.** layernorm_backward_implementation
 - [x] **92.** create_token_embedding
 - [x] **93.** token_embedding_forward
-- [ ] **94.** token_embedding_backward
+- [x] **94.** token_embedding_backward
 - [x] **95.** create_positional_embedding
 - [x] **96.** slice_positional_embedding
 - [x] **97.** add_token_and_positional_embeddings
@@ -138,9 +138,9 @@ python scaffold.py
 - [ ] **126.** transpose_heads_to_back
 - [ ] **127.** get_multihead_output_sequence_length
 - [x] **128.** merge_heads_to_d_model
-- [ ] **129.** multihead_output_projection_forward
+- [x] **129.** multihead_output_projection_forward
 - [ ] **130.** multihead_reshape_transpose_backward
-- [ ] **131.** ffn_linear_one_forward
+- [x] **131.** ffn_linear_one_forward
 - [ ] **132.** ffn_activation_forward
 - [ ] **133.** ffn_linear_two_forward
 - [ ] **134.** ffn_backward

@@ -511,8 +511,12 @@ def token_embedding_forward(token_ids, embedding_matrix):
         "vocab_size": embedding_matrix.shape[0]
     }
 
-# Step 94 - token_embedding_backward (not yet solved)
-# TODO: implement
+# Step 94 - token_embedding_backward
+import numpy as np
+
+def token_embedding_backward(d_out, cache):
+    # TODO: scatter-add d_out into a (vocab_size, d_model) dE using cache['token_ids'].
+    pass
 
 # Step 95 - create_positional_embedding
 def create_positional_embedding(block_size, d_model, scale=0.02):
@@ -702,14 +706,28 @@ def merge_heads_to_d_model(x_heads_back):
     batch_size, seq_len, n_heads, d_head = x_heads_back.shape
     return x_heads_back.reshape(batch_size,seq_len,n_heads*d_head)
 
-# Step 129 - multihead_output_projection_forward (not yet solved)
-# TODO: implement
+# Step 129 - multihead_output_projection_forward
+def multihead_output_projection_forward(merged, w_out, b_out):
+    return {
+      "out": linear_forward(merged,w_out) + b_out,
+      "cache": {
+        "merged": merged,
+        "w_out": w_out
+      }
+    }
 
 # Step 130 - multihead_reshape_transpose_backward (not yet solved)
 # TODO: implement
 
-# Step 131 - ffn_linear_one_forward (not yet solved)
-# TODO: implement
+# Step 131 - ffn_linear_one_forward
+def ffn_linear_one_forward(x, w1, b1):
+    return {
+        "h1": x @ w1 + b1 ,
+        "cache": {
+            "w1": w1,
+            "x": x
+        }
+    }
 
 # Step 132 - ffn_activation_forward (not yet solved)
 # TODO: implement
