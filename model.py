@@ -446,8 +446,11 @@ def derive_dx_on_paper():
 def linear_backward_dx(dy, cache):
    return dy @ cache["w"].T
 
-# Step 78 - linear_backward_dw (not yet solved)
-# TODO: implement
+# Step 78 - linear_backward_dw
+def linear_backward_dw(dy, cache):
+    """Return dL/dW for a linear layer Y = X @ W."""
+    # TODO: compute the weight gradient using x from cache and the upstream dy
+    return dy @ cache["y"]
 
 # Step 79 - bias_add_forward
 def bias_add_forward(x, b):
@@ -747,8 +750,9 @@ def ffn_linear_two_forward(a1, w2, b2):
 # Step 134 - ffn_backward (not yet solved)
 # TODO: implement
 
-# Step 135 - residual_forward (not yet solved)
-# TODO: implement
+# Step 135 - residual_forward
+def residual_forward(x, sublayer_out):
+    return x + sublayer_out
 
 # Step 136 - residual_backward (not yet solved)
 # TODO: implement
