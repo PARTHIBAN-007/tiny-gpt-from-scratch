@@ -481,8 +481,11 @@ import numpy as np
 def layernorm_forward_mean(x):
     return sum_keepdims(x,axis=-1) / x.shape[-1]
 
-# Step 85 - layernorm_forward_variance (not yet solved)
-# TODO: implement
+# Step 85 - layernorm_forward_variance
+import numpy as np
+
+def layernorm_forward_variance(x, mean):
+    return np.mean((x - mean)**2,axis = -1,keepdims = True)
 
 # Step 86 - layernorm_forward_normalize (not yet solved)
 # TODO: implement
