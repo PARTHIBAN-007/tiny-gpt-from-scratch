@@ -135,7 +135,7 @@ python scaffold.py
 - [x] **123.** compute_d_head
 - [ ] **124.** multihead_masked_softmax_scores
 - [ ] **125.** multihead_weighted_sum
-- [ ] **126.** transpose_heads_to_back
+- [x] **126.** transpose_heads_to_back
 - [ ] **127.** get_multihead_output_sequence_length
 - [x] **128.** merge_heads_to_d_model
 - [x] **129.** multihead_output_projection_forward
