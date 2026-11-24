@@ -734,7 +734,7 @@ def merge_heads_to_d_model(x_heads_back):
 # Step 129 - multihead_output_projection_forward
 def multihead_output_projection_forward(merged, w_out, b_out):
     return {
-      "out": linear_forward(merged,w_out) + b_out,
+      "out": linear_forward(merged,w_out)["y"] + b_out,
       "cache": {
         "merged": merged,
         "w_out": w_out
@@ -778,8 +778,19 @@ def residual_forward(x, sublayer_out):
 # Step 136 - residual_backward (not yet solved)
 # TODO: implement
 
-# Step 137 - pre_layernorm_sublayer_forward (not yet solved)
-# TODO: implement
+# Step 137 - pre_layernorm_sublayer_forward
+def pre_layernorm_sublayer_forward(x, ln_params, sublayer_fn, sublayer_params):
+    x_norm = layernorm_forward_affine(x,ln_params["gamma"],ln_params["beta"],1e-5)
+    sublayer_out = sublayer_fn(x_norm["y"],sublayer_params)
+    y = x + sublayer_out["y"]
+    return {
+        "y": y,
+        "cache": {
+            "ln_cache": x_norm["cache"],
+            "sublayer_cache": sublayer_out["cache"],
+            "x": x
+        }
+    }
 
 # Step 138 - transformer_block_forward (not yet solved)
 # TODO: implement
