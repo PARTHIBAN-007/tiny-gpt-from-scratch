@@ -715,8 +715,12 @@ def compute_d_head(d_model, n_heads):
 # Step 124 - multihead_masked_softmax_scores (not yet solved)
 # TODO: implement
 
-# Step 125 - multihead_weighted_sum (not yet solved)
-# TODO: implement
+# Step 125 - multihead_weighted_sum
+import numpy as np
+
+def multihead_weighted_sum(weights, v_heads):
+    attention_weights = weights @ v_heads
+    return attention_weights
 
 # Step 126 - transpose_heads_to_back
 def transpose_heads_to_back(x_heads):
