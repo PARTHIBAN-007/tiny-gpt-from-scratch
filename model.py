@@ -870,8 +870,12 @@ def adam_update_second_moment(v_prev, grad, beta2):
 def adam_bias_correction(m, v, beta1, beta2, t):
     return (m / (1-beta1**t)) , (v/(1-beta2**t))
 
-# Step 153 - adam_parameter_update (not yet solved)
-# TODO: implement
+# Step 153 - adam_parameter_update
+import numpy as np
+
+def adam_parameter_update(param, m_hat, v_hat, lr, eps):
+    param = param - lr * (m_hat / (np.sqrt(v_hat) + eps))
+    return param
 
 # Step 154 - wire_full_training_loop (not yet solved)
 # TODO: implement
