@@ -852,8 +852,9 @@ def initialize_adam_step_counter():
     t = 0
     return t
 
-# Step 149 - adam_increment_step (not yet solved)
-# TODO: implement
+# Step 149 - adam_increment_step
+def adam_increment_step(t):
+    return t+1
 
 # Step 150 - adam_update_first_moment (not yet solved)
 # TODO: implement
