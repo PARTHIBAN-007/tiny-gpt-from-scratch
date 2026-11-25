@@ -147,7 +147,7 @@ python scaffold.py
 - [x] **135.** residual_forward
 - [ ] **136.** residual_backward
 - [x] **137.** pre_layernorm_sublayer_forward
-- [ ] **138.** transformer_block_forward
+- [x] **138.** transformer_block_forward
 - [ ] **139.** transformer_block_backward
 - [ ] **140.** stack_transformer_blocks
 - [ ] **141.** forward_through_all_blocks
@@ -157,7 +157,7 @@ python scaffold.py
 - [ ] **145.** full_model_forward
 - [ ] **146.** full_model_backward
 - [x] **147.** initialize_adam_moments
-- [ ] **148.** initialize_adam_step_counter
+- [x] **148.** initialize_adam_step_counter
 - [ ] **149.** adam_increment_step
 - [ ] **150.** adam_update_first_moment
 - [ ] **151.** adam_update_second_moment
