@@ -751,8 +751,10 @@ def multihead_output_projection_forward(merged, w_out, b_out):
       }
     }
 
-# Step 130 - multihead_reshape_transpose_backward (not yet solved)
-# TODO: implement
+# Step 130 - multihead_reshape_transpose_backward
+def multihead_reshape_transpose_backward(d_merged, shape_info):
+    reshaped = reshape_to_heads(d_merged,shape_info["n_heads"],shape_info["d_head"])
+    return np.transpose(reshaped,axes = (0,2,1,3))
 
 # Step 131 - ffn_linear_one_forward
 def ffn_linear_one_forward(x, w1, b1):
