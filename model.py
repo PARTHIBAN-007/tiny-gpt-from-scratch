@@ -667,9 +667,9 @@ def choose_attention_head_config(d_model, n_heads):
 
 # Step 117 - create_multihead_qkv_projections
 def create_multihead_qkv_projections(d_model, scale=0.02):
-    Wq = scale_w_small(make_2d_random(d_model, d_model, seed=42), scale)
-    Wk = scale_w_small(make_2d_random(d_model, d_model, seed=43), scale)
-    Wv = scale_w_small(make_2d_random(d_model, d_model, seed=44), scale)
+    Wq = scale_w_small(make_2d_random(d_model, d_model, 0), scale)
+    Wk = scale_w_small(make_2d_random(d_model, d_model, 1), scale)
+    Wv = scale_w_small(make_2d_random(d_model, d_model, 2), scale)
     
     return {
         'Wq': Wq,
