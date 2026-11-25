@@ -866,8 +866,9 @@ def adam_update_first_moment(m, grad, beta1):
 def adam_update_second_moment(v_prev, grad, beta2):
     return beta2*v_prev + (1-beta2)*(grad**2)
 
-# Step 152 - adam_bias_correction (not yet solved)
-# TODO: implement
+# Step 152 - adam_bias_correction
+def adam_bias_correction(m, v, beta1, beta2, t):
+    return (m / (1-beta1**t)) , (v/(1-beta2**t))
 
 # Step 153 - adam_parameter_update (not yet solved)
 # TODO: implement
