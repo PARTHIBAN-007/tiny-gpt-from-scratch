@@ -208,10 +208,11 @@ def stable_softmax_1d(logits):
 import numpy as np
 
 def stable_softmax_2d_rowwise(logits):
-    maxi = max_along_axis(logits,axis = 1)
-    maxi = maxi.reshape(logits.shape[0],1)
+    maxi = max_along_axis(logits,axis = -1)
+    maxi = maxi[...,np.newaxis]
     logits = logits - maxi
-    return array_exp(logits) / sum_keepdims(array_exp(logits),axis = 1)
+    softmax = array_exp(logits)/sum_keepdims(array_exp(logits),axis = -1)
+    return softmax
 
 # Step 34 - read_text_file
 def read_text_file(text_blob):
@@ -712,8 +713,11 @@ def compute_d_head(d_model, n_heads):
     head_dim = d_model//n_heads
     return head_dim
 
-# Step 124 - multihead_masked_softmax_scores (not yet solved)
-# TODO: implement
+# Step 124 - multihead_masked_softmax_scores
+def multihead_masked_softmax_scores(scores, mask): 
+    masked = apply_causal_mask(scores,mask)
+    attn = stable_softmax_2d_rowwise(masked)
+    return attn
 
 # Step 125 - multihead_weighted_sum
 import numpy as np
