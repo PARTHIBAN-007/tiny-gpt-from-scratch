@@ -969,6 +969,11 @@ def append_token_to_sequence(context_ids, token_id):
 # Step 165 - generation_loop_for_n_steps (not yet solved)
 # TODO: implement
 
-# Step 166 - decode_final_sequence (not yet solved)
-# TODO: implement
+# Step 166 - decode_final_sequence
+def decode_final_sequence(generated_ids, itos):
+    res = []
+    for i in range(len(generated_ids)):
+        for j in range(len(generated_ids[0])):
+            res.append(itos[generated_ids[i][j]])
+    return "".join(res)
 
