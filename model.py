@@ -895,8 +895,9 @@ def adam_parameter_update(param, m_hat, v_hat, lr, eps):
 # Step 159 - take_last_position_logits (not yet solved)
 # TODO: implement
 
-# Step 160 - apply_temperature (not yet solved)
-# TODO: implement
+# Step 160 - apply_temperature
+def apply_temperature(logits, temperature):
+    return logits / temperature
 
 # Step 161 - top_k_filter (not yet solved)
 # TODO: implement
