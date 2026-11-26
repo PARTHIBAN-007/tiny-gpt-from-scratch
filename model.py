@@ -933,8 +933,11 @@ def top_k_filter(logits, k):
 def softmax_to_probs(logits):
     return stable_softmax_2d_rowwise(logits)
 
-# Step 163 - sample_one_token (not yet solved)
-# TODO: implement
+# Step 163 - sample_one_token
+def sample_one_token(probs, rng):
+    vocab_size = probs.shape[-1]
+    row_probs = probs[0]
+    return int(rng.choice(vocab_size, p=row_probs))
 
 # Step 164 - append_token_to_sequence (not yet solved)
 # TODO: implement
