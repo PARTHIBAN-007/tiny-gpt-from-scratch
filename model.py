@@ -845,11 +845,22 @@ def transformer_block_forward(x, block_params):
 # Step 147 - initialize_adam_moments
 import numpy as np
 
+
+def _allocate_zeros(node):
+    if isinstance(node, np.ndarray):
+        return np.zeros(node.shape, dtype=node.dtype)
+    if isinstance(node, dict):
+        return {key: _allocate_zeros(value) for key, value in node.items()}
+    if isinstance(node, list):
+        return [_allocate_zeros(item) for item in node]
+    if isinstance(node, tuple):
+        return tuple(_allocate_zeros(item) for item in node)
+    return node
+
 def initialize_adam_moments(model_params):
-    
-    param_1 = model_params["W"].shape
-    param_2 = model_params["b"].shape
-    return {'W': np.zeros(param_1),"b": np.zeros(param_2)} ,{'W': np.zeros(param_1),"b": np.zeros(param_2)}
+    m = _allocate_zeros(model_params)
+    v = _allocate_zeros(model_params)
+    return m, v
 
 # Step 148 - initialize_adam_step_counter
 def initialize_adam_step_counter():
