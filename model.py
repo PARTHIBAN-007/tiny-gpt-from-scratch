@@ -894,8 +894,7 @@ def adam_parameter_update(param, m_hat, v_hat, lr, eps):
 
 # Step 159 - take_last_position_logits
 def take_last_position_logits(logits):
-    # TODO: slice out the logits at the final time step from a (1, T, V) tensor.
-    return logits[-1,...]
+    return logits[:,-1,:]
 
 # Step 160 - apply_temperature
 def apply_temperature(logits, temperature):
