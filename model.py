@@ -963,7 +963,8 @@ def sample_one_token(probs, rng):
 import numpy as np
 
 def append_token_to_sequence(context_ids, token_id):
-    return np.hstack((context_ids,token_id))
+    token_id = np.array(token_id).reshape(-1,1)
+    return np.concatenate([context_ids, token_id], axis=1)
 
 # Step 165 - generation_loop_for_n_steps (not yet solved)
 # TODO: implement
