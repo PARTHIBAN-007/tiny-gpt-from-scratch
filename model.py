@@ -915,8 +915,19 @@ def take_last_position_logits(logits):
 def apply_temperature(logits, temperature):
     return logits / temperature
 
-# Step 161 - top_k_filter (not yet solved)
-# TODO: implement
+# Step 161 - top_k_filter
+def top_k_filter(logits, k):
+    if k>=len(logits[-1]):
+        return logits
+    top_k_indices = np.argpartition(logits, -k,axis=-1)[...,-k:]
+    top_k_logits = np.full_like(logits, -np.inf)
+    np.put_along_axis(
+            top_k_logits, 
+            top_k_indices, 
+            np.take_along_axis(logits, top_k_indices, axis=-1), 
+            axis=-1
+        )
+    return top_k_logits
 
 # Step 162 - softmax_to_probs
 def softmax_to_probs(logits):
