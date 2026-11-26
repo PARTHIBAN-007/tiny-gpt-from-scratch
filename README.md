@@ -168,10 +168,10 @@ python scaffold.py
 - [ ] **156.** encode_prompt
 - [ ] **157.** crop_context_to_block_size
 - [ ] **158.** forward_to_get_logits
-- [ ] **159.** take_last_position_logits
+- [x] **159.** take_last_position_logits
 - [x] **160.** apply_temperature
 - [ ] **161.** top_k_filter
-- [ ] **162.** softmax_to_probs
+- [x] **162.** softmax_to_probs
 - [ ] **163.** sample_one_token
 - [ ] **164.** append_token_to_sequence
 - [ ] **165.** generation_loop_for_n_steps

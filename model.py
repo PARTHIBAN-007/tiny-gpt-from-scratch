@@ -892,8 +892,10 @@ def adam_parameter_update(param, m_hat, v_hat, lr, eps):
 # Step 158 - forward_to_get_logits (not yet solved)
 # TODO: implement
 
-# Step 159 - take_last_position_logits (not yet solved)
-# TODO: implement
+# Step 159 - take_last_position_logits
+def take_last_position_logits(logits):
+    # TODO: slice out the logits at the final time step from a (1, T, V) tensor.
+    return logits[-1,...]
 
 # Step 160 - apply_temperature
 def apply_temperature(logits, temperature):
@@ -902,8 +904,9 @@ def apply_temperature(logits, temperature):
 # Step 161 - top_k_filter (not yet solved)
 # TODO: implement
 
-# Step 162 - softmax_to_probs (not yet solved)
-# TODO: implement
+# Step 162 - softmax_to_probs
+def softmax_to_probs(logits):
+    return stable_softmax_2d_rowwise(logits)
 
 # Step 163 - sample_one_token (not yet solved)
 # TODO: implement
