@@ -32,11 +32,12 @@ def encode_char(ch, stoi):
     return stoi[ch]
 
 # Step 5 - encode_string
+import numpy as np
 def encode_string(text, stoi):
     res = []
     for char in text:
         res.append(encode_char(char,stoi))
-    return res
+    return np.array(res)
 
 # Step 6 - decode_int
 def decode_int(token_id, itos):
@@ -913,8 +914,12 @@ def adam_parameter_update(param, m_hat, v_hat, lr, eps):
 # Step 155 - logging_and_validation_loss (not yet solved)
 # TODO: implement
 
-# Step 156 - encode_prompt (not yet solved)
-# TODO: implement
+# Step 156 - encode_prompt
+import numpy as np
+
+def encode_prompt(prompt, stoi):
+    encode = np.array(encode_string(prompt,stoi))
+    return encode[None,:]
 
 # Step 157 - crop_context_to_block_size (not yet solved)
 # TODO: implement
