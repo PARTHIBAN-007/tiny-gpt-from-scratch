@@ -830,8 +830,15 @@ def transformer_block_forward(x, block_params):
 # Step 142 - backward_through_all_blocks (not yet solved)
 # TODO: implement
 
-# Step 143 - final_layernorm_forward (not yet solved)
-# TODO: implement
+# Step 143 - final_layernorm_forward
+def final_layernorm_forward(x, gamma, beta):
+    y =  layernorm_forward_affine(x,gamma,beta,1e-5)
+    return y["y"],{"x": x,
+            "mean": y["cache"]["mean"],
+            "var": y["cache"]["var"],
+            "x_hat": y["cache"]["x_hat"],
+            "gamma": gamma
+        }
 
 # Step 144 - lm_head_linear_forward (not yet solved)
 # TODO: implement
@@ -939,8 +946,11 @@ def sample_one_token(probs, rng):
     row_probs = probs[0]
     return int(rng.choice(vocab_size, p=row_probs))
 
-# Step 164 - append_token_to_sequence (not yet solved)
-# TODO: implement
+# Step 164 - append_token_to_sequence
+import numpy as np
+
+def append_token_to_sequence(context_ids, token_id):
+    return np.hstack((context_ids,token_id))
 
 # Step 165 - generation_loop_for_n_steps (not yet solved)
 # TODO: implement

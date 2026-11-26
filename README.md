@@ -152,7 +152,7 @@ python scaffold.py
 - [ ] **140.** stack_transformer_blocks
 - [ ] **141.** forward_through_all_blocks
 - [ ] **142.** backward_through_all_blocks
-- [ ] **143.** final_layernorm_forward
+- [x] **143.** final_layernorm_forward
 - [ ] **144.** lm_head_linear_forward
 - [ ] **145.** full_model_forward
 - [ ] **146.** full_model_backward
@@ -173,7 +173,7 @@ python scaffold.py
 - [x] **161.** top_k_filter
 - [x] **162.** softmax_to_probs
 - [x] **163.** sample_one_token
-- [ ] **164.** append_token_to_sequence
+- [x] **164.** append_token_to_sequence
 - [ ] **165.** generation_loop_for_n_steps
 - [ ] **166.** decode_final_sequence
 
