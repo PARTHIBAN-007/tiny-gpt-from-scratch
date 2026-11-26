@@ -412,8 +412,11 @@ def cross_entropy_loss(probs, targets):
 # Step 69 - compute_dw_scatter_add (not yet solved)
 # TODO: implement
 
-# Step 70 - sgd_update_w (not yet solved)
-# TODO: implement
+# Step 70 - sgd_update_w
+import numpy as np
+
+def sgd_update_w(w, dw, learning_rate):
+    return w - learning_rate * dw
 
 # Step 71 - run_one_training_step (not yet solved)
 # TODO: implement
@@ -843,9 +846,10 @@ def transformer_block_forward(x, block_params):
 import numpy as np
 
 def initialize_adam_moments(model_params):
-    w_shape = model_params["W"].shape
-    b_shape = model_params["b"].shape
-    return {'W': np.zeros(w_shape),"b": np.zeros(b_shape)} ,{'W': np.zeros(w_shape),"b": np.zeros(b_shape)}
+    
+    param_1 = model_params["W"].shape
+    param_2 = model_params["b"].shape
+    return {'W': np.zeros(param_1),"b": np.zeros(param_2)} ,{'W': np.zeros(param_1),"b": np.zeros(param_2)}
 
 # Step 148 - initialize_adam_step_counter
 def initialize_adam_step_counter():
